@@ -10,20 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     [SerializeField] private Airplane airplane;
     private Animator anim;
-    private float sceneStartTime; // Время начала сцены
+
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        scoreText.text = "0";
-        sceneStartTime = Time.time; // Инициализация времени начала сцены
-    }
-
-    void Update()
-    {
-        // Обновление текста с текущим временем сцены
-        float currentSceneTime = Time.time - sceneStartTime; // Вычисление текущего времени сцены
-        scoreText.text = "time: " + currentSceneTime.ToString("F0"); // "F0" форматирует число без десятичных знаков
     }
 
     public void EndGame()
